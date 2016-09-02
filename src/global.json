@@ -1,0 +1,6 @@
+{
+    "projects": [
+        "StructureMap.DynamicInterception",
+        "StructureMap.DynamicInterception.Testing"
+    ]
+}

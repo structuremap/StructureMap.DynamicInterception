@@ -61,7 +61,7 @@ namespace StructureMap.DynamicInterception
 
         public static bool IsGenericTask(Type type)
         {
-            return type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Task<>);
+            return type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(Task<>);
         }
 
         public static async Task ConvertInvocationResultToTask(IMethodInvocationResult methodInvocationResult)

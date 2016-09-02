@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace StructureMap.Testing.Acceptance
+namespace StructureMap.DynamicInterception.Testing
 {
     public class DynamicProxyInterceptorAcceptanceTests
     {
