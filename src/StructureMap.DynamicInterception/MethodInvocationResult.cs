@@ -17,27 +17,15 @@ namespace StructureMap.DynamicInterception
             _exceptionDispatchInfo = ExceptionDispatchInfo.Capture(exception);
         }
 
-        public bool Successful
-        {
-            get { return _exceptionDispatchInfo != null; }
-        }
+        public bool Successful => _exceptionDispatchInfo == null;
 
-        public object ReturnValue { get; private set; }
+        public object ReturnValue { get; }
 
-        public Exception Exception
-        {
-            get
-            {
-                return _exceptionDispatchInfo != null ? _exceptionDispatchInfo.SourceException : null;
-            }
-        }
+        public Exception Exception => _exceptionDispatchInfo?.SourceException;
 
         public object GetReturnValueOrThrow()
         {
-            if (_exceptionDispatchInfo != null)
-            {
-                _exceptionDispatchInfo.Throw();
-            }
+            _exceptionDispatchInfo?.Throw();
 
             return ReturnValue;
         }
